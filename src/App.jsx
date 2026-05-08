@@ -22,10 +22,6 @@ export default function App() {
     setTasks(tasks.filter(t => t.id !== id))
   }
 
-  function handleKeyDown(e) {
-    if (e.key === 'Enter') addTask()
-  }
-
   return (
     <div className="board">
       <h1>タスクボード</h1>
@@ -35,7 +31,6 @@ export default function App() {
           type="text"
           value={input}
           onChange={e => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
           placeholder="タスクを入力..."
         />
         <button onClick={addTask}>追加</button>
